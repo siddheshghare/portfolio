@@ -7,22 +7,26 @@ function Portfolio() {
         {
             id: 1,
             img: "express.png",
-            name: "Express"
+            name: "Express",
+            git:"https://github.com/siddheshghare/Backend_JS.git"
         },
         {
             id: 2,
             img: "node.png",
-            name: "Node"
+            name: "Node",
+             git:"https://github.com/siddheshghare/Backend_JS.git"
         },
         {
             id: 3,
             img: "reactjs.png",
-            name: "ReactJs"
+            name: "ReactJs",
+             git:"https://github.com/siddheshghare/BookStore.git"
         },
         {
             id: 4,
             img: "mongodb.jpg",
-            name: "Mongodb"
+            name: "Mongodb",
+             git:"https://github.com/siddheshghare/Backend_JS.git"
         },
         {
             id: 5,
@@ -44,7 +48,7 @@ function Portfolio() {
                     <div className=' grid grid-cols-1 md:grid-cols-4 gap-4 my-6 '>
 
                         {
-                            logo.map(({ id, img, name }) => (
+                            logo.map(({ id, img, name,git }) => (
 
                                 <div className='md:w-[300px] md:h[300px] border-black  border-[2px] rounded-lg shadow-lg p-1  cursor-pointer hover:scale-110 duration-300 '>
                                     <img
@@ -58,7 +62,15 @@ function Portfolio() {
                                         <p className=' font-semibold px-2'>Lorem ipsum dolor sit amet.</p>
                                     </div>
                                     <div className='flex justify-center mt-4'>
-                                        <button className='bg-blue-500  hover:bg-blue-800 font-bold px-3 py-2 rounded-md'>Source Code</button>
+                                    {git ? (
+                                            <button onClick={() => window.open(git, '_blank')} className='bg-blue-500 hover:bg-blue-800 font-bold px-3 py-2 rounded-md'>
+                                                Source Code
+                                            </button>
+                                        ) : (
+                                            <button className='bg-gray-500 cursor-not-allowed font-bold px-3 py-2 rounded-md'>
+                                                No Source Code
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
 
